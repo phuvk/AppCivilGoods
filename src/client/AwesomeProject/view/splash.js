@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import Utils from './utils';
 
 export default class Splash extends Component {
@@ -12,10 +12,11 @@ export default class Splash extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.titleContainer}>
+                    <Image style={styles.logo} source={require('./images/logo.png')}/>
                     <Text style={styles.title}>Mad App</Text>
                 </View>
                 <View style={styles.subtitleContainer}>
-                    <Text style={styles.subtitle}>Powered by React Native</Text>
+                    <Text style={styles.subtitle}>Powered by Mad Team</Text>
                 </View>
             </View>
         );
@@ -24,10 +25,14 @@ export default class Splash extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#2980b9', 
+        backgroundColor: '#fff', 
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    logo: {
+        width: 70,
+        height: 70,
     },
     titleContainer: {
         flex: 1,
@@ -35,7 +40,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     title: {
-        color: 'white',
+        color: '#2980b9',
         fontSize: 35,
         fontWeight: 'bold'
     },
@@ -46,7 +51,7 @@ const styles = StyleSheet.create({
         paddingBottom: 20
     },
     subtitle: {
-        color: 'white',
+        color: '#2980b9',
         fontSize: 15,
         fontWeight: 'bold'
     }

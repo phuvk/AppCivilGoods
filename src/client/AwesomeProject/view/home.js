@@ -8,13 +8,42 @@ export default class Home extends Component {
     render() {
         return (
             <View  style={styles.container}>
-                <View style={styles.header}>
-                    <TouchableOpacity style={styles.iconContainer} onPress={() => this.openSideMenu()}>
-                        <Image style={styles.icon} source={require('./images/menu.png')}/>
+                <View style={styles.headerContainer}>
+                    <TouchableOpacity style={styles.sideMenuContainer} onPress={() => this.openSideMenu()}>
+                        <Image style={styles.slideMenuIcon} source={require('./images/menu.png')}/>
+                    </TouchableOpacity>
+                    <View style={styles.titleContainer}>
+                        <Text style={styles.title}>Mad App</Text>
+                    </View>
+                    <TouchableOpacity style={styles.cartContainer}>
+                        <Image style={styles.cartIcon} source={require('./images/cart.png')}/>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.titleContainer}>
-                    <Text style={styles.title}>Welcome to Home Page</Text>
+                <View style={styles.contentContainer}>
+                     <View style={styles.itemContainer}>
+                        <TouchableOpacity style={styles.itemIconContainer}>
+                            <Image style={styles.itemIcon} source={require('./images/shopping.png')}/>
+                        </TouchableOpacity>
+                        <Text style={styles.itemText}>
+                            Mua Hàng
+                        </Text>
+                    </View>
+                    <View style={styles.itemContainer}>
+                        <TouchableOpacity style={styles.itemIconContainer}>
+                                <Image style={styles.itemIcon} source={require('./images/repair.png')}/>
+                        </TouchableOpacity>
+                        <Text style={styles.itemText}>
+                            Sửa Chữa
+                        </Text>
+                    </View>
+                    <View style={styles.itemContainer}>
+                        <TouchableOpacity style={styles.itemIconContainer}>
+                            <Image style={styles.itemIcon} source={require('./images/contact.png')}/>
+                        </TouchableOpacity>
+                        <Text style={styles.itemText}>
+                            Liên Hệ
+                        </Text>
+                    </View>
                 </View>
             </View>
         );
@@ -24,32 +53,66 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#2980b9'
+        backgroundColor: '#fff'
     },
-    header: {
-        height: 70,
-        backgroundColor: '#20618c'
+    headerContainer: {
+        height: 120,
+        flexDirection: 'row'
+    },
+    sideMenuContainer: {
+        flex: 1
+    },
+    slideMenuIcon: {
+        width: 25,
+        height: 20,
+        marginTop: 50,
+        marginLeft: 15
     },
     titleContainer: {
+        flex: 1
+    },
+    title: {
+        flex: 1,
+        color: '#2980b9',
+        fontSize: 20,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        textAlignVertical: 'center'
+    },
+    cartContainer: {
+        flex: 1,
+        alignItems: 'flex-end'
+    },
+    cartIcon: {
+        width: 35,
+        height: 35,
+        marginTop: 45,
+        marginRight: 15
+    },
+    contentContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    itemContainer: {
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginBottom: 40
+    },
+    itemIconContainer: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
     },
-    title: {
-        color: 'white',
-        fontSize: 20,
-        fontWeight: 'bold',
-        textAlign: 'center',
+    itemIcon: {
+        width: 80,
+        height: 80
     },
-    iconContainer: {
+    itemText: {
         flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-    },
-    icon: {
-        width: 30,
-        height: 30,
-        marginTop: 25,
-        marginLeft: 10
+        color: '#2980b9',
+        fontSize: 22,
+        fontWeight: 'bold',
+        textAlign: 'left'
     }
 });

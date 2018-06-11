@@ -4,9 +4,46 @@ import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
 export default class Menu extends Component {
     render() {
         return (
-            <View  style={styles.container}>
-                <View style={styles.titleContainer}>
-                    <Text style={styles.title}>Side Menu</Text>
+            <View style={styles.container}>
+                <View style={styles.userItemContainer}>
+                    <TouchableOpacity style={styles.itemIconContainer}>
+                        <Image style={styles.userItemIcon} source={require('./images/user.png')}/>
+                    </TouchableOpacity>
+                    <Text style={styles.userItemText}>
+                        Vương Khả Phú
+                    </Text>
+                </View>
+                <View style={styles.itemContainer}>
+                    <TouchableOpacity style={styles.itemIconContainer}>
+                        <Image style={styles.itemIcon} source={require('./images/cart.png')}/>
+                    </TouchableOpacity>
+                    <Text style={styles.itemText}>
+                        Giỏ Hàng
+                    </Text>
+                </View>
+                <View style={styles.itemContainer}>
+                    <TouchableOpacity style={styles.itemIconContainer}>
+                        <Image style={styles.itemIcon} source={require('./images/tag.png')}/>
+                    </TouchableOpacity>
+                    <Text style={styles.itemText}>
+                        Mua Hàng
+                    </Text>
+                </View>
+                <View style={styles.itemContainer}>
+                    <TouchableOpacity style={styles.itemIconContainer}>
+                            <Image style={styles.itemIcon} source={require('./images/repair.png')}/>
+                    </TouchableOpacity>
+                    <Text style={styles.itemText}>
+                        Sửa Chữa
+                    </Text>
+                </View>
+                <View style={styles.itemContainer}>
+                    <TouchableOpacity style={styles.itemIconContainer}>
+                        <Image style={styles.itemIcon} source={require('./images/contact.png')}/>
+                    </TouchableOpacity>
+                    <Text style={styles.itemText}>
+                        Liên Hệ
+                    </Text>
                 </View>
             </View>
         );
@@ -16,32 +53,43 @@ export default class Menu extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#2980b9'
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        marginTop: 24
     },
-    header: {
-        height: 70,
-        backgroundColor: '#20618c'
+    itemContainer: {
+        alignItems: 'center',
+        flexDirection: 'row',
     },
-    titleContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+    userItemContainer: {
+        alignItems: 'center',
+        flexDirection: 'row',
+        backgroundColor: '#2980b9',
     },
-    title: {
-        color: 'white',
-        fontSize: 20,
-        fontWeight: 'bold',
-        textAlign: 'center',
+    itemIconContainer: {
+        flex: 2,
+        alignItems: 'center',
+        paddingTop: 15,
+        paddingBottom: 15
     },
-    iconContainer: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
+    itemIcon: {
+        width: 40,
+        height: 40
     },
-    icon: {
-        width: 30,
-        height: 30,
-        marginTop: 25,
-        marginLeft: 10
+    userItemIcon: {
+        width: 40,
+        height: 40
+    },
+    itemText: {
+        flex: 3,
+        color: '#2980b9',
+        fontSize: 16,
+        textAlign: 'left'
+    },
+    userItemText: {
+        flex: 3,
+        color: '#fff',
+        fontSize: 16,
+        textAlign: 'left'
     }
 });
